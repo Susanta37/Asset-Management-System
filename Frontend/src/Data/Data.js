@@ -322,6 +322,57 @@ export const depreciationData = [
   
 ];
 
+export const assetTypesData = [
+  {
+    name: 'Hardwares',
+    description: 'Door Locks' 
+  },
+  {
+    name: 'Extrusion',
+    description: 'Bi-fold door	' 
+  },
+  {
+    name: 'Extrusion',
+    description: 'Curtain Wall	' 
+  },
+  {
+    name: 'Notebook',
+    description: 'User Notebook	' 
+  },
+  {
+    name: 'AUTOMATIC TRANSFER SWITCH	',
+    description: 'AUTOMATIC TRANSFER SWITCH	' 
+  },
+  {
+    name: 'SWITCHGEAR',
+    description: 'SWITCHGEAR' 
+  },
+  {
+    name: 'TRANSFORMER',
+    description: 'TRANSFORMER' 
+  },
+  {
+    name: 'STRING BATTERY	',
+    description: 'STRING BATTERY' 
+  },
+  {
+    name: 'chair',
+    description: 'Normal' 
+  },
+  {
+    name: 'CPU',
+    description: 'Central Processing Unit	' 
+  },
+  {
+    name: 'Testing',
+    description: 'Asset Type Testing	' 
+  },
+  {
+    name: 'Asset Type Testing	',
+    description: '' 
+  },
+];
+
 
   
   export default data;
