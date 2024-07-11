@@ -373,6 +373,190 @@ export const assetTypesData = [
   },
 ];
 
+export const brandData = [
+  {
+    name: 'Epson',
+    description: 'DvD' 
+  },
+  {
+    name: 'JOHN BEAN	',
+    description: '' 
+  },
+  {
+    name: 'ASUS',
+    description: '' 
+  },
+  {
+    name: 'Apple',
+    description: 'all Apple' 
+  },
+  {
+    name: 'DELL',
+    description: 'Laptop' 
+  },
+  {
+    name: 'Frontech',
+    description: 'fronttech-headphone' 
+  },
+  {
+    name: 'LG',
+    description: 'LG-AC' 
+  },
+  {
+    name: 'Surya',
+    description: 'Light' 
+  },
+  {
+    name: 'Frontech',
+    description: 'E-cam' 
+  },
+  {
+    name: 'Nilkamal',
+    description: 'Chair' 
+  },
+  {
+    name: 'Jio',
+    description: 'Jio-WiFi' 
+  },
+  {
+    name: 'Epson',
+    description: 'Printer' 
+  },
+];
+
+export const supplierData = [
+{
+  name: 'High Tech	',
+  email:'rathnafanhouse@gmail.com	' ,
+  phone:28155535 ,
+  address: 'jaydev Vihar',
+  city: 'BBSR',
+  country:'IND'
+},
+{
+  name: 'rajat',
+  email: 'rajata@gmail.com',
+  phone: 876566787,
+  address: 'Nayapali',
+  city: 'bbsr',
+  country:'IND'
+},
+{
+  name: 'Sahil',
+  email: 'sahil@gmail.com',
+  phone:98989898 ,
+  address: 'link Road',
+  city: 'CTC' ,
+  country:'Ind'
+},
+{
+  name: 'Punya',
+  email: 'punya@gmail.com' ,
+  phone:6565656565 ,
+  address: 'R.K valley',
+  city:'Jajpur' ,
+  country:'IND'
+},
+{
+  name: 'Sadab Hussain',
+  email: 'sadab@gmail.com' ,
+  phone: 11144446,
+  address: 'Missilkenagar',
+  city: 'Karachi',
+  country:'PAK'
+},
+{
+  name: 'Osama',
+  email: 'osama@gmail.com',
+  phone: 'UNknown Num',
+  address: 'Bonbnagar',
+  city: 'Lahore' ,
+  country:'PAK'
+},
+{
+  name: 'Donald',
+  email: 'donald@gmail.com', 
+  phone: 'UNknown Num',
+  address: 'VK park',
+  city: 'park street',
+  country:'US'
+},
+{
+  name: 'hecan',
+  email: 'hc@gmail.com	',
+  phone: 123456789,
+  address: 'axcvb nmj	',
+  city: 13,
+  country:'Korea, Republic of	'
+},
+{
+  name: 'End IN	',
+  email: 'admin@example.com	',
+  phone: 9876543210	,
+  address: 'abc	',
+  city: 'abcd',
+  country:'Soltan Mozafar	'
+},
+{
+  name: 'SRI MALLIKARJUNA EQUIPMENTS	',
+  email: 'smpe1407@gmail.com	',
+  phone: 7989798097,
+  address: 'Sri Mallikarjuna Pneumatics & Equipments 2-3-89, Kusuma Nivas, Ramgopalpet Ranigunj, Secunderabad -500003	',
+  city: 'HYDERABAD',
+  country:'IND'
+}
+];
+
+export const locationData = [
+{
+  name: 'Gasha high school - Erbil	',
+  description: 'GHSE' 
+},
+{
+  name: 'Skudai	',
+  description: 'UTM Office	' 
+},
+{
+  name: 'Testing Locations	',
+  description: '' 
+},
+{
+  name: 'Private Room 101	',
+  description: 'Private Room 101	' 
+},
+{
+  name: 'ITCH',
+  description: 'Company at Chhauni' 
+},
+{
+  name: 'Delhi',
+  description: 'Delhi Supplier	' 
+},
+{
+  name: 'ACI TORINO	',
+  description: 'test' 
+},
+{
+  name: 'Surya',
+  description: 'gaya' 
+},
+{
+  name: 'Frontech',
+  description: 'office' 
+},
+{
+  name: 'Nilkamal',
+  description: 'room2' 
+},
+{
+  name: 'Jio',
+  description: 'room3' 
+},
+{
+  name: 'Epson',
+  description: 'room4' 
+},
+];
 
   
   export default data;
