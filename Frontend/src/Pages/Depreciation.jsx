@@ -10,6 +10,7 @@ import {
   FaFilePdf,
   FaPrint
 } from 'react-icons/fa';
+import NavBar from '../Components/NavBar.jsx';
 
 const Depreciation = () => {
   const [data, setData] = useState(depreciationData);
@@ -109,8 +110,11 @@ const Depreciation = () => {
   };
 
   return (
+   <>
+    <NavBar/>
     <div className="bg-white p-4 rounded shadow">
       <Toaster position="top-center" reverseOrder={false} />
+   
       <div className='flex justify-between p-2'><h2 className="text-center text-xl font-semibold mb-2">Depreciation List</h2>
       <button className="bg-blue-500 text-white p-2 rounded">+ Add data</button></div>
       <div className="flex justify-between mb-2 border border-gray-300 p-2">
@@ -165,6 +169,7 @@ const Depreciation = () => {
         <button onClick={() => nextPage()} disabled={!canNextPage} className="bg-blue-400 hover:bg-blue-600 p-2 rounded">Next</button>
       </div>
     </div>
+   </>
   );
 };
 

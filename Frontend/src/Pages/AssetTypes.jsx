@@ -114,7 +114,11 @@ const AssetTypes = () => {
       <Toaster position="top-center" reverseOrder={false} />
       <NavBar />
       <div className="bg-white p-4 rounded shadow">
-        <h2 className="text-center text-xl font-semibold mb-2">Asset type list</h2>
+    <div className='flex justify-between mb-2'>
+    <h2 className="text-center text-xl font-semibold mb-2">Asset type list</h2>
+    <button className="bg-blue-500 text-white p-2 rounded">+ Add data</button>
+    </div>
+
         <div className="flex justify-between mb-2">
           <div className="flex gap-4">
             <button onClick={handleCopy} className="text-blue-500 hover:text-blue-700 mx-2" title="Copy">
@@ -136,7 +140,6 @@ const AssetTypes = () => {
             placeholder="Search..."
             className="border p-2 rounded border-gray-500"
           />
-          <button className="bg-blue-500 text-white p-2 rounded">+ Add data</button>
         </div>
         <table {...getTableProps()} className="min-w-full bg-white border border-gray-200">
           <thead>
