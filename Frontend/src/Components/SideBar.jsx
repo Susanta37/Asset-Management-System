@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import { FaTachometerAlt, FaCogs, FaTools, FaHistory, FaChartLine, FaTags, FaTrademark, FaTruck, FaMapMarkerAlt, FaUsers, FaBuilding, FaChartBar, FaCog } from 'react-icons/fa';
+import { FaTachometerAlt, FaCogs, FaTools, FaHistory, FaChartLine, FaTags, FaTrademark, FaTruck, FaMapMarkerAlt, FaUsers, FaBuilding, FaChartBar, FaCog, FaChevronDown, FaChevronRight } from 'react-icons/fa'; // Import FaChevronDown and FaChevronRight
 import '../App.css';
+import { MdAccountBalance } from "react-icons/md";
 
 const menuItems = [
   { name: 'Dashboard', icon: <FaTachometerAlt />, path: '/' },
@@ -15,6 +16,17 @@ const menuItems = [
   { name: 'Suppliers', icon: <FaTruck />, path: '/suppliers' },
   { name: 'Locations', icon: <FaMapMarkerAlt />, path: '/locations' },
   { name: 'Employees', icon: <FaUsers />, path: '/employees' },
+  {
+    name: 'Accounts',
+    icon: <MdAccountBalance />,
+    path: '/accounts',
+    submenu: [
+      { name: 'Bank & Cash Accounts', path: '/accounts/Bank & Cash Accounts' },
+      { name: 'Transactions', path: '/accounts/transactions' },
+      { name: 'Transactions Categories', path: '/accounts/transactions Categories' },
+      { name: 'Transactions Methods', path: '/accounts/transactions methods' },
+    ]
+  },
   { name: 'Departments', icon: <FaBuilding />, path: '/departments' },
   { name: 'Reports', icon: <FaChartBar />, path: '/reports' },
   { name: 'Settings', icon: <FaCog />, path: '/settings' },
@@ -24,6 +36,7 @@ const SideBar = () => {
   const location = useLocation();
   const [selected, setSelected] = useState(location.pathname);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Initially show sidebar
+  const [submenuOpen, setSubmenuOpen] = useState({});
 
   useEffect(() => {
     setSelected(location.pathname);
@@ -31,6 +44,13 @@ const SideBar = () => {
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const toggleSubmenu = (path) => {
+    setSubmenuOpen(prevState => ({
+      ...prevState,
+      [path]: !prevState[path]
+    }));
   };
 
   return (
@@ -41,15 +61,40 @@ const SideBar = () => {
         </div>
         <nav className="sidebar flex flex-col justify-center pt-40 flex-1 p-4 space-y-2 overflow-y-auto">
           {menuItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`flex items-center py-3 px-4 rounded-lg transition duration-300 ${selected === item.path ? 'bg-blue-500 text-white' : 'hover:bg-blue-700 hover:text-white'}`}
-              onClick={() => setSelected(item.path)}
-            >
-              <span className="text-2xl">{item.icon}</span>
-              <span className={`ml-4 md:block ${isSidebarOpen ? 'hidden' : 'block'}`}>{item.name}</span>
-            </Link>
+            <div key={item.name}>
+              {item.submenu ? (
+                <div>
+                  <div
+                    className={`flex items-center py-3 px-4 rounded-lg transition duration-300 ${selected === item.path ? 'bg-blue-500 text-white' : 'hover:bg-blue-700 hover:text-white'}`}
+                    onClick={() => toggleSubmenu(item.path)}
+                  >
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className={`ml-4 md:block ${isSidebarOpen ? 'hidden' : 'block'}`}>{item.name}</span>
+                    {item.submenu && (submenuOpen[item.path] ? <FaChevronDown className="ml-auto" /> : <FaChevronRight className="ml-auto" />)}
+                  </div>
+                  {submenuOpen[item.path] && (
+                    <ul className="ml-8"> {/* Adjust the left margin for proper indentation */}
+                      {item.submenu.map((subitem, subindex) => (
+                        <li key={subindex} className="submenu-item">
+                          <Link to={subitem.path} className={`py-2 px-4 block text-sm hover:bg-gray-800 ${selected === subitem.path ? 'text-blue-500' : 'text-gray-300'}`}>
+                            {subitem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  to={item.path}
+                  className={`flex items-center py-3 px-4 rounded-lg transition duration-300 ${selected === item.path ? 'bg-blue-500 text-white' : 'hover:bg-blue-700 hover:text-white'}`}
+                  onClick={() => setSelected(item.path)}
+                >
+                  <span className="text-2xl">{item.icon}</span>
+                  <span className={`ml-4 md:block ${isSidebarOpen ? 'hidden' : 'block'}`}>{item.name}</span>
+                </Link>
+              )}
+            </div>
           ))}
         </nav>
       </div>

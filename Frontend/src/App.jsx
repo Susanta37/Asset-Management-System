@@ -17,6 +17,10 @@ import Reports from './Pages/Report'
 import Setting from './Pages/Setting'
 import UserPage from "./Pages/UserPage";
 import DepreciationTable from "./Pages/depreciationTable";
+import Accounts from "./Pages/Accounts";
+import transactions from "./Pages/transactions";
+// import Bank from "./Pages/bank_and_cash_accounts";
+
 
 
 function App(){
@@ -64,6 +68,20 @@ function App(){
       },{
         path:"/employees",
         element:<Employees/>
+      },
+      {
+        path:"/accounts",
+        element:<Accounts/>,
+        children:[
+          // {
+          //   path: "/bank_and_cash_accounts",
+          //   element: <Bank/>
+          // },
+          // {
+          //   path: "/transaction",
+          //   element: <Transactions/>
+          // }
+        ]
       },
       {
         path:"/departments",

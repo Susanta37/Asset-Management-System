@@ -47,7 +47,7 @@ const NavBar = () => {
             <hr />
             <div className='flex gap-3 text-green-500 items-center'>
               <ImArrowDownRight />
-              <p className='text-green-500'>Duregesh's Issue Solved</p>
+              <p className='text-green-500'>Durgesh's Issue Solved</p>
             </div>
           </div>
         )}
