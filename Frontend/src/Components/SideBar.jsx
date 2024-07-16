@@ -56,10 +56,11 @@ const SideBar = () => {
   return (
     <div className={`md:w-64 w-full ${isSidebarOpen ? ' top-0 md:fixed md:top-0' : ' md:relative md:top-auto'}`}>
       <div className={`w-full md:w-64 bg-gray-900 text-gray-200 flex flex-col h-screen shadow-lg ${isSidebarOpen ? '' : 'hidden md:block'}`}>
-        <div className="flex items-center justify-center md:justify-start h-20 border-b border-gray-700">
+        <div className="flex items-center justify-center md:justify-start h-20 border-b border-gray-700 ">
           <Link to="/"><img src={logo} alt="Logo" className="h-12 w-auto" /></Link>
         </div>
-        <nav className="sidebar flex flex-col justify-center pt-40 flex-1 p-4 space-y-2 overflow-y-auto">
+       <div className='sidebar overflow-y-auto'>
+       <nav className="sidebar flex flex-col justify-center flex-1 p-4 space-y-2 ">
           {menuItems.map((item) => (
             <div key={item.name}>
               {item.submenu ? (
@@ -97,6 +98,7 @@ const SideBar = () => {
             </div>
           ))}
         </nav>
+       </div>
       </div>
       {/* Toggle button for small and medium screens */}
       {!isSidebarOpen && (

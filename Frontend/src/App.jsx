@@ -18,7 +18,7 @@ import Setting from './Pages/Setting'
 import UserPage from "./Pages/UserPage";
 import DepreciationTable from "./Pages/depreciationTable";
 import Accounts from "./Pages/Accounts";
-import transactions from "./Pages/transactions";
+
 // import Bank from "./Pages/bank_and_cash_accounts";
 
 
